@@ -70,25 +70,51 @@ var add = function(a, b) { return a + b; }
 console.log(reduce(nums, add, 0))
 
 //Extension 3
-function intersection(arrays) {
+// console.log(intersection([5, 10, 15, 20], [15, 88, 1, 5, 7], [1, 10, 15, 5, 20]));
+// should log: [5, 15]
+
+//lets start off with the intersection of two arrays
+
+function intersection(...arrays) {
+
   
-   
-  console.log('********')
-  console.log(arrays.length)
-  console.log('********')
   
-  
-  for (let i = 0; i<arrays.length ; i++){
-    console.log(arrays[i])
-    
+
+   console.log(arrays)
+   union=[]
+
+
+   for(let i=0;i<arrays[0].length;i++){
+      console.log('*********************')
+     console.log(`testing for occurence of ${arrays[0][i]}`)
+     let score=1;
+
+     for(let x=1;x<arrays.length;x++){
+       console.log(`seeing if  ${arrays[0][i]} occurs in ${arrays[x]}`)
+        //something is wrong with this condition
+       if(arrays[x].indexOf(arrays[0][i])!== -1){
+         score++
+          
+        }
+     }
+     console.log(`${arrays[0][i]} occurs ${score} times`)
+     //if score of test number is equal to the number of arrays then it appears in all three
+     if(score===arrays.length){
+       union.push(arrays[0][i])
+     }
+   }
  
-  
+ console.log('test')
+ console.log(union)
+
+
+
+
 }
-    
-    
-    
-    
-    
+
+intersection([5, 10, 15, 20], [15, 88, 1, 5, 7],[20, 88, 1, 5, 7]);
+
+
   
   
  
