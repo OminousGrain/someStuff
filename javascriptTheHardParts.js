@@ -129,7 +129,30 @@ intersection([5, 10, 15, 20], [15, 88, 1, 5, 7],[20, 88, 1, 5, 7]);
 // should log: [5, 15]
 
 //Extension 4
-function union(arrays) {
+function union(...arrays) {
+//console.log(arrays)
+const uniqueNumbers=[]
+
+  for(let i=0;i<arrays.length;i++){
+    console.log(arrays[i])
+
+
+    for(let x=0;x<arrays[i].length;x++){
+      console.log(arrays[i][x])
+      if(uniqueNumbers.indexOf(arrays[i][x])===-1){
+        uniqueNumbers.push(arrays[i][x])
+
+      }    
+    }
+
+
+
+
+
+  }
+
+  console.log(uniqueNumbers)
+
 
 }
 
